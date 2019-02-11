@@ -8,8 +8,9 @@ const hbs = require("hbs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
-const flash = require("connect-flash");
 const session = require("express-session");
+const flash = require("connect-flash");
+const MongoStore = require("connect-mongo")(session);
 const passport = require("passport");
 
 require("./config/passport-setup.js");
@@ -47,21 +48,8 @@ app.use(
   })
 );
 
-app.use(flash());
-
-// app.use() defines our own MIDDLEWAR function
-app.use((req, res, next) => {
-  // send flash messages to the hbs file for every pages
-  //(req.flash() comes from the "connect-flash" npm package)
-  res.locals.messages = req.flash();
-
-  // send the logged-in user's info to hbs files for ALL pages
-  // (req.user is defined by Passport and contains the logged-in user's info)
-  res.locals.currentUser = req.user;
-  // Tell Express we are ready to move to the routes now
-  // (You need this or your pages will stay loading forever)
-  next();
-});
+// Partials connections
+// hbs.registerPartials(path.join(__dirname, "views", "partials"));
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
@@ -80,6 +68,25 @@ app.use(
     store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );
+
+app.use(passport.initialize());
+
+app.use(passport.session());
+app.use(flash());
+
+// app.use() defines our own MIDDLEWAR function
+app.use((req, res, next) => {
+  // send flash messages to the hbs file for every pages
+  //(req.flash() comes from the "connect-flash" npm package)
+  res.locals.messages = req.flash();
+
+  // send the logged-in user's info to hbs files for ALL pages
+  // (req.user is defined by Passport and contains the logged-in user's info)
+  res.locals.currentUser = req.user;
+  // Tell Express we are ready to move to the routes now
+  // (You need this or your pages will stay loading forever)
+  next();
+});
 
 // default value for title local
 app.locals.title = "Express -HopOnHopOff";
