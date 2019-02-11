@@ -13,8 +13,8 @@ router.post("/process-signup", (req, res, next) => {
     lastName,
     firstName,
     email,
-    originalPassword,
-    passwordConfirmation
+    originalPassword
+    // passwordConfirmation
   } = req.body;
 
   if (!originalPassword || originalPassword.match(/[0-9]/)) {
@@ -24,24 +24,24 @@ router.post("/process-signup", (req, res, next) => {
 
     return;
   }
-  // Password and Confirmation password
-  if (originalPassword != passwordConfirmation) {
-    req.flash(
-      "Error",
-      "The password and Confirmation password fiels must match",
-      "Please enter the same information in both field"
-    );
+  // // Password and Confirmation password
+  // if (originalPassword != passwordConfirmation) {
+  //   req.flash(
+  //     "Error",
+  //     "The password and Confirmation password fiels must match",
+  //     "Please enter the same information in both field"
+  //   );
 
-    // Must be redirect or can we stay on the page with the flash message ??
-    req.redirect("/");
-  }
+  //   // Must be redirect or can we stay on the page with the flash message ??
+  //   req.redirect("/");
+  // }
 
   // Encrypt the user's password before saving
   const encryptedPassword = bcryptjs.hashSync(originalPassword, 10);
 
   User.create({ lastName, firstName, email, encryptedPassword })
     .then(() => {
-      req.flash("Congratulation ");
+      req.flash("Congratulation your account is create!!");
 
       // redirect to the HOME PAGE
       res.redirect("/");
@@ -49,4 +49,21 @@ router.post("/process-signup", (req, res, next) => {
     .catch(err => next(err));
 });
 
+router.get("/resa-result", (req, res, next) => {
+  res.render("resa-views/resa-result.hbs");
+});
+
+router.post("process-resa", (req, res, next) => {
+  const { departureDate, duration, quantity } = req.body;
+
+  const resa = req.user._id;
+
+  Resa.create({ departureDate, duration, quantity, resa })
+    .then(resaArray => {
+      res.locals.resaResult = resaArray;
+      req.flash("sucess");
+      req.redirect("/resa-result");
+    })
+    .catch(err => next(err));
+});
 module.exports = router;

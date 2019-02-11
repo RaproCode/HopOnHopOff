@@ -1,39 +1,29 @@
 {{!-- <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> --}}
 
-<header class="header-homePage">
-  <nav class="header">
-    <div class="left-header">
-      <img src="" alt="LOGO PICTURE">
-      <p>NAME of the APPLI</p>
-    </div>
-    <div class="right-header">
-      <button> <a href="./signup">Create my account</a></button>
-      <button> <a href="./signIn">Log In</a></button>
-      <button> <a href="#">Book Your Tour Now ! </a></button>
-    </div>
-  </nav>
-</header>
+{{body}}
 <section class="discover-europe">
   <h2>DISCOVER EUROPE</h2>
 
 </section>
 
-<section class="book-tour">
-  <form action="" method="">
+<section class="book-tour" id="book">
+  <form action="/process-resa" method="POST">
     <label>
       When ?
     </label>
-    <input type="date" />
+    <input type="date" name="departureDate" />
 
     <label>
       Duration ?:
     </label>
-    <input type="text" />
+    <input type="text" name="duration" />
 
     <label>
       How many People?
     </label>
-    <input type="number" />
+    <input type="number" name="quantity" />
+
+    <button> <a href="/resa-result">Submit</a> </button>
   </form>
 </section>

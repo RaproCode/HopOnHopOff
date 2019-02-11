@@ -49,7 +49,7 @@ app.use(
 );
 
 // Partials connections
-// hbs.registerPartials(path.join(__dirname, "views", "partials"));
+hbs.registerPartials(path.join(__dirname, "views", "partials"));
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
@@ -76,7 +76,7 @@ app.use(flash());
 
 // app.use() defines our own MIDDLEWAR function
 app.use((req, res, next) => {
-  // send flash messages to the hbs file for every pages
+  // send  messages to the hbs file for every pages
   //(req.flash() comes from the "connect-flash" npm package)
   res.locals.messages = req.flash();
 

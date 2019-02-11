@@ -17,7 +17,7 @@ const citySchema = new Schema(
 );
 
 // "City" model -> "cities" collection
-const City = mongoose.model("City", busSchema);
+const City = mongoose.model("City", citySchema);
 
 // share the model with other parts of the app
 module.exports = City;

@@ -35,3 +35,16 @@ label,
 input {
   margin-right: 5px;
 }
+
+.Error-message {
+  border: 3px solid;
+  border-radius: 3px;
+  color: tomato;
+  padding: 10px;
+}
+.success-message {
+  border: 3px solid;
+  border-radius: 3px;
+  color: chartreuse;
+  padding: 10px;
+}
