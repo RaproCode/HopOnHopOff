@@ -89,7 +89,7 @@ const redLine = [
     hotel: "Mercure Budapest Buda",
     image: "",
     visit:
-      "Wednesday sees you arrive in Hungary, the fourth country of the tour. Its capital, Budapest, is known as the Pearl of the Danube, and is essentially two different cities joined together: Buda on the west of the river, Pest on the east, each with its own distinct characteristics.    One of the best ways of seeing this unique location is by taking a river cruise, which many people choose to do. After a morning of activity, you’ll relax over lunch at Buda Palace, and then have a chance to look at the exhibitions in the Budapest History Museum and Hungarian National Gallery, or do a spot of souvenir shopping. Next you’ll explore both sides of the city on a cultural and historic tour. Highlights on the Buda side of the Danube include the towered terrace of Fisherman’s Bastion, the medieval Matthias Church and a walk up to the summit of Gellért Hill for panoramic views. While over in Pest the sights include the expansive Heroes’ Square and Hungary’s dramatic riverside Parliament Building. In the evening, you can choose to round off an eventful day with an optional dinner in the heart of Budapest, where you can sample traditional dishes such as goose liver, goulash, duck leg and local wine, accompanied by Hungarian folkdance and music"
+      "Wednesday sees you arrive in Hungary, the fourth country of the tour. Its capital, Budapest, is known as the Pearl of the Danube, and is essentially two different cities joined together: Buda on the west of the river, Pest on the east, each with its own distinct characteristics. One of the best ways of seeing this unique location is by taking a river cruise, which many people choose to do. After a morning of activity, you’ll relax over lunch at Buda Palace, and then have a chance to look at the exhibitions in the Budapest History Museum and Hungarian National Gallery, or do a spot of souvenir shopping. Next you’ll explore both sides of the city on a cultural and historic tour. Highlights on the Buda side of the Danube include the towered terrace of Fisherman’s Bastion, the medieval Matthias Church and a walk up to the summit of Gellért Hill for panoramic views. While over in Pest the sights include the expansive Heroes’ Square and Hungary’s dramatic riverside Parliament Building. In the evening, you can choose to round off an eventful day with an optional dinner in the heart of Budapest, where you can sample traditional dishes such as goose liver, goulash, duck leg and local wine, accompanied by Hungarian folkdance and music"
   },
   {
     cities: "Budapest – Vienna",
@@ -121,8 +121,53 @@ const redLine = [
   }
 ];
 
-// const departureCities = [
-//   {
-//     city: ""
-//   }
-// ];
+const departureCities = [
+  {
+    city: "Paris",
+    flag: "../public/images/flags/france-flag.jpg",
+    time: "09.00",
+    geolocation: "48.856788, 2.351077"
+  },
+  {
+    city: "Luxembourg",
+    flag: "../public/images/flags/luxembourg-flag.jpg",
+    time: "09.00",
+    geolocation: "49.612151, 6.137464"
+  },
+  {
+    city: "Frankfurt",
+    flag: "../public/images/flags/german-flag.jpg",
+    time: "09.00",
+    geolocation: "50.106171, 8.664951"
+  },
+  {
+    city: "Amsterdam",
+    flag: "../public/images/flags/netherlands-flag.jpg",
+    time: "09.00",
+    geolocation: "52.378522, 4.897025"
+  },
+  {
+    city: "Prague",
+    flag: "../public/images/flags/czech-flag.jpg",
+    time: "09.00",
+    geolocation: "50.087113, 14.417726"
+  },
+  {
+    city: "Budapest",
+    flag: "../public/images/flags/hungary-flag.jpg",
+    time: "09.00",
+    geolocation: "47.503823, 19.044939"
+  },
+  {
+    city: "Vienna",
+    flag: "../public/images/flags/austria-flag.jpg",
+    time: "09.00",
+    geolocation: "48.209819, 16.360785"
+  },
+  {
+    city: "Zurich",
+    flag: "../public/images/flags/switzerland-flag.jpg",
+    time: "09.00",
+    geolocation: "47.366122, 8.541175"
+  }
+];
