@@ -3,6 +3,31 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF; }
+  color: #00b7ff;
+  text-decoration: none; }
+
+.header-homePage {
+  height: 70px;
+  background-color: red; }
+
+.header {
+  display: flex;
+  justify-content: space-between; }
+
+.left-header {
+  display: flex; }
+
+.discover-europe {
+  height: 500px;
+  background-color: royalblue; }
+
+.book-tour {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%; }
+
+label,
+input {
+  margin-right: 5px; }
 
 /*# sourceMappingURL=style.css.map */
