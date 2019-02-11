@@ -1,0 +1,40 @@
+<h2>Sign Up</h2>
+
+{{!-- {{>flash_messages}} --}}
+
+<h3>Creating Your HOPONHOPOFF ACCOUNT</h3>
+
+<hr>
+
+{{!-- flash_messages --}}
+
+<form action="/process-signup" method="POST">
+  <label>
+    Last Name
+  </label>
+  <input type="text" name="lastName" , placeholder="" , minlength="2" required>
+
+  <label>
+    First Name
+  </label>
+  <input type="text" name="firstName" , minlength="2" required>
+
+  <label>
+    E-mail address
+  </label>
+  <input type="email" name="email" ,placeholder="blahblah@exemple.com" required>
+
+  <label>
+    Password
+  </label>
+  <input type="password" name="originalPassword" required>
+
+  <label>
+    Confirm password
+    <input type="password" name="passwordConfirmation">
+  </label>
+
+  <hr>
+
+  <button>CREATE MY ACCOUNT</button>
+</form>
