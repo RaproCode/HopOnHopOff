@@ -2,6 +2,7 @@ const express = require("express");
 const bcryptjs = require("bcryptjs");
 
 const User = require("../models/user-models.js");
+const Resa = require("../models/resa-models.js");
 const router = express.Router();
 
 router.get("/signup", (req, res, next) => {
@@ -48,22 +49,30 @@ router.post("/process-signup", (req, res, next) => {
     })
     .catch(err => next(err));
 });
-
-router.get("/resa-result", (req, res, next) => {
+router.get("/resa", (req, res, next) => {
   res.render("resa-views/resa-result.hbs");
 });
 
-router.post("process-resa", (req, res, next) => {
+router.post("/process-resa", (req, res, next) => {
   const { departureDate, duration, quantity } = req.body;
-
-  const resa = req.user._id;
-
-  Resa.create({ departureDate, duration, quantity, resa })
-    .then(resaArray => {
-      res.locals.resaResult = resaArray;
-      req.flash("sucess");
-      req.redirect("/resa-result");
+  Resa.create({ departureDate, duration, quantity })
+    .then(resaDoc => {
+      res.redirect(`/resa/${resaDoc._id}`);
     })
     .catch(err => next(err));
 });
+router.get("/resa/:resaId", (req, res, next) => {
+  const { resaId } = req.params;
+  Resa.findById(resaId)
+    .then(resaDoc => {
+      res.locals.resaItem = resaDoc;
+      res.render("resa-views/resa-result.hbs");
+    })
+    .catch(err => next(err));
+});
+
+// router.get("/resa-result", (req, res, next) => {
+//   // Resa.find().then().catch()
+//   res.render("resa-views/resa-result.hbs");
+// });
 module.exports = router;
