@@ -4,14 +4,16 @@ const Schema = mongoose.Schema;
 
 const busSchema = new Schema(
   {
-    // Document structure & rules defined here
-    userId: { type: Schema.Types.ObjectId, ref: "User" },
-    lineId: { type: String, enum: ["Blue", "Red"] },
-    capacity: { type: Number },
-    startDate: { type: Date },
-    hotel: { type: String },
-    image: { type: String },
-    visit: { type: String }
+    name: { type: String },
+    cities: [
+      {
+        hotel: { type: String },
+        image: { type: String },
+        visit: { type: String },
+        itinerary: { type: String },
+        startingCity: { type: String }
+      }
+    ]
   },
   {
     // Additional settings for the Scema class defined here
@@ -19,8 +21,8 @@ const busSchema = new Schema(
   }
 );
 
-// "Bus" model -> "buses" collection
-const Bus = mongoose.model("Bus", busSchema);
+// "BusLine" model -> "buses" collection
+const BusLine = mongoose.model("BusLine", busSchema);
 
 // share the model with other parts of the app
-module.exports = Bus;
+module.exports = BusLine;
