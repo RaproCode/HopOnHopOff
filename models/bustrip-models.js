@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const busSchema = new Schema(
   {
     // Document structure & rules defined here
-    userId: { type: Schema.Types.ObjectId, ref: "User" }, //requiered: true;
+    userId: { type: Schema.Types.ObjectId, ref: "User", requiered: true },
     lineId: { type: String, enum: ["Blue", "Red"], required: true },
     capacity: { type: Number },
     startDate: { type: Date, required: true },

@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const User = require("../models/user-models.js");
 
 mongoose
-  .connect("mongodb://localhost/HOPONHOPOFF-PROJECT", { useNewUrlParser: true })
+  .connect("mongodb://localhost/hoponhop", { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
