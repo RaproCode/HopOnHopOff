@@ -25,23 +25,23 @@ router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
     res.render("resa-views/resa-option.hbs");
   } else {
     // redirect to the sign up page if you ARE NOT logged-in
-    req.flash("error", "You have to be signUp to add a room. 🛌");
+    req.flash("error", "You have to be signUp to create itinerary");
     res.redirect("/signup");
   }
-});
 
-// user choices of itinerary
-router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
-  const { resaId, cityName } = req.params;
+  // user choices of itinerary
+  router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
+    const { resaId, cityName } = req.params;
 
-  Busline.find({ "cities.startingCity": cityName })
-    .then(lines => {
-      console.log(lines, "wahawahwaah");
-      res.locals.lineArray = lines;
-      res.render("resa-views/resa-option.hbs");
-      // res.json(lines);
-    })
-    .catch(err => next(err));
+    Busline.find({ "cities.startingCity": cityName })
+      .then(lines => {
+        console.log(lines, "wahawahwaah");
+        res.locals.lineArray = lines;
+        res.render("resa-views/resa-option.hbs");
+        // res.json(lines);
+      })
+      .catch(err => next(err));
+  });
 });
 
 // Summary of user order
