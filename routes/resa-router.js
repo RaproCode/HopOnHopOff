@@ -19,7 +19,10 @@ router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
 
   Busline.find({ "cities.startingCity": cityName })
     .then(lines => {
-      res.json(lines);
+      console.log(lines, "wahawahwaah");
+      res.locals.lineArray = lines;
+      res.render("resa-views/resa-option.hbs");
+      // res.json(lines);
     })
     .catch(err => next(err));
 });
