@@ -1,21 +1,23 @@
 <h2>Resa result page</h2>
 
 
-
-<p> {{resaItem.departureDate}}</p>
-<p>{{resaItem.duration}} day's</p>
-<p>{{resaItem.quantity}} people</p>
-
+<div>
+  <p> {{resaItem.departureDate}}</p>
+  <p>{{resaItem.duration}} day's</p>
+  <p>{{resaItem.quantity}} people</p>
+</div>
 
 <h2>Choose your City Start</h2>
 
-{{cityArray.City}}
+<div class="list-cityFlag">
+  {{#each cityArray}}
+  <ul>
+    <li>
+      <img src="{{this.flag}}" alt="flag">
+      <button> {{this.city}}</button>
 
-{{#each cityArray}}
-<li>
-  <img src="{{this.flag}}" alt="flag">
-  <button> {{this.city}}</button>
+    </li>
+  </ul>
 
-</li>
-
-{{/each}}
+  {{/each}}
+</div>

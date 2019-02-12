@@ -6,6 +6,9 @@ a {
   color: #00b7ff;
   text-decoration: none; }
 
+li {
+  list-style-type: none; }
+
 .header-homePage {
   height: 70px;
   background-color: red; }
@@ -41,5 +44,8 @@ input {
   border-radius: 3px;
   color: chartreuse;
   padding: 10px; }
+
+.list-cityFlag {
+  display: flex; }
 
 /*# sourceMappingURL=style.css.map */
