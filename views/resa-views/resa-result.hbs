@@ -11,16 +11,17 @@
 
 {{cityArray.City}}
 
+<div class="list-container">
+  {{#each cityArray}}
+  <li class="list-content">
+    {{this.city}}
+    <button><img class=flags src="{{this.flag}}" alt="flag"></button>
 
-{{#each cityArray}}
-<li>
-  <img class=flags src="{{this.flag}}" alt="flag">
-  <button> {{this.city}}</button>
-  {{this.startTime}}
+    {{this.startTime}}
 
 
-</li>
-</ul>
+  </li>
+  </ul>
 
-{{/each}}
+  {{/each}}
 </div>

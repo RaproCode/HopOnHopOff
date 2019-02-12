@@ -53,11 +53,19 @@ input {
   padding: 10px;
 }
 
-.list-cityFlag {
+.list-container {
   display: flex;
 }
 
 .flags {
-  height: 2%;
-  width: 4%;
+  width: 42%;
+  height: 20%;
+}
+
+.list-content {
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1%;
 }
