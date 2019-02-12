@@ -6,6 +6,40 @@ const Resa = require("../models/resa-models.js");
 const City = require("../models/city-models.js");
 const router = express.Router();
 
+router.get("/login", (req, res, next) => {
+  res.render("auth-views/log-in-form.hbs");
+});
+
+router.post("process-logIn", (req, res, next) => {
+  const { email, originalPassword } = req.body;
+
+  User.findOne({ email: { $eq: email } })
+    .then(userDoc => {
+      if (!userDoc) {
+        req.flash("Error", "Email is incorrect");
+
+        res.redirect("/login");
+        return;
+      }
+      const { encryptedPassword } = userDoc;
+
+      if (!bcryptjs.compareSync(originalPassword, encryptedPassword)) {
+        req.flash("Error", "Password is incorrect");
+
+        res.redirect("/login");
+
+        return;
+      }
+
+      req.logIn(userDoc, () => {
+        req.flash("Success", "Welcome back!");
+        res.redirect("/");
+      });
+    })
+    .catch(err => next(err));
+});
+
+// SIGNUP SECTION
 router.get("/signup", (req, res, next) => {
   res.render("auth-views/signup-form.hbs");
 });
@@ -19,7 +53,7 @@ router.post("/process-signup", (req, res, next) => {
     // passwordConfirmation
   } = req.body;
 
-  if (!originalPassword || originalPassword.match(/[0-9]/)) {
+  if (!originalPassword || !originalPassword.match(/[0-9]/)) {
     req.flash("Error", "Password must countain min 6 characters and 1 number ");
 
     res.redirect("/signup");
