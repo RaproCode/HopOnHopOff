@@ -9,15 +9,18 @@
 
 <h2>Choose your City Start</h2>
 
-<div class="list-cityFlag">
-  {{#each cityArray}}
-  <ul>
-    <li>
-      <img src="{{this.flag}}" alt="flag">
-      <button> {{this.city}}</button>
+{{cityArray.City}}
 
-    </li>
-  </ul>
 
-  {{/each}}
+{{#each cityArray}}
+<li>
+  <img class=flags src="{{this.flag}}" alt="flag">
+  <button> {{this.city}}</button>
+  {{this.startTime}}
+
+
+</li>
+</ul>
+
+{{/each}}
 </div>

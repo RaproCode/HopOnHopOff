@@ -7,7 +7,7 @@ const citySchema = new Schema(
     // Document structure & rules defined here
     city: { type: String },
     flag: { type: String },
-    startTime: { type: String },
+    time: { type: String },
     geolocation: { type: String }
   },
   {
