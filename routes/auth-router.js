@@ -3,6 +3,7 @@ const bcryptjs = require("bcryptjs");
 
 const User = require("../models/user-models.js");
 const Resa = require("../models/resa-models.js");
+const City = require("../models/city-models.js");
 const router = express.Router();
 
 router.get("/signup", (req, res, next) => {
@@ -61,12 +62,21 @@ router.post("/process-resa", (req, res, next) => {
     })
     .catch(err => next(err));
 });
+
 router.get("/resa/:resaId", (req, res, next) => {
   const { resaId } = req.params;
   Resa.findById(resaId)
     .then(resaDoc => {
+      console.log(resaDoc);
       res.locals.resaItem = resaDoc;
-      res.render("resa-views/resa-result.hbs");
+
+      City.find()
+        .then(cityResults => {
+          console.log(cityResults, "ggygygygygygyggygyggygy");
+          res.locals.cityArray = cityResults;
+          res.render("resa-views/resa-result.hbs");
+        })
+        .catch(err => next(err));
     })
     .catch(err => next(err));
 });

@@ -20,49 +20,49 @@ mongoose
 const departureCities = [
   {
     city: "Paris",
-    flag: "../public/images/flags/france-flag.jpg",
+    flag: "/images/flags/france-flag.jpg",
     time: "09.00",
     geolocation: "48.856788, 2.351077"
   },
   {
     city: "Luxembourg",
-    flag: "../public/images/flags/luxembourg-flag.jpg",
+    flag: "/images/flags/luxembourg-flag.jpg",
     time: "09.00",
     geolocation: "49.612151, 6.137464"
   },
   {
     city: "Frankfurt",
-    flag: "../public/images/flags/german-flag.jpg",
+    flag: "/images/flags/german-flag.jpg",
     time: "09.00",
     geolocation: "50.106171, 8.664951"
   },
   {
     city: "Amsterdam",
-    flag: "../public/images/flags/netherlands-flag.jpg",
+    flag: "/images/flags/netherlands-flag.jpg",
     time: "09.00",
     geolocation: "52.378522, 4.897025"
   },
   {
     city: "Prague",
-    flag: "../public/images/flags/czech-flag.jpg",
+    flag: "/images/flags/czech-flag.jpg",
     time: "09.00",
     geolocation: "50.087113, 14.417726"
   },
   {
     city: "Budapest",
-    flag: "../public/images/flags/hungary-flag.jpg",
+    flag: "/images/flags/hungary-flag.jpg",
     time: "09.00",
     geolocation: "47.503823, 19.044939"
   },
   {
     city: "Vienna",
-    flag: "../public/images/flags/austria-flag.jpg",
+    flag: "/images/flags/austria-flag.jpg",
     time: "09.00",
     geolocation: "48.209819, 16.360785"
   },
   {
     city: "Zurich",
-    flag: "../public/images/flags/switzerland-flag.jpg",
+    flag: "/images/flags/switzerland-flag.jpg",
     time: "09.00",
     geolocation: "47.366122, 8.541175"
   }

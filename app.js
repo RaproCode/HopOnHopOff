@@ -97,4 +97,7 @@ app.use("/", index);
 const auth = require("./routes/auth-router.js");
 app.use("/", auth);
 
+const resa = require("./routes/resa-router.js");
+app.use("/", resa);
+
 module.exports = app;
