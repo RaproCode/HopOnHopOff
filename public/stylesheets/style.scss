@@ -8,6 +8,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 .header-homePage {
   height: 70px;
   background-color: red;
@@ -49,6 +53,8 @@ input {
   padding: 10px;
 }
 
+.list-cityFlag {
+  display: flex;
 .flags {
   height: 2%;
   width: 4%;
