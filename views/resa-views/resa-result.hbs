@@ -9,4 +9,13 @@
 
 <h2>Choose your City Start</h2>
 
-{{cityArray}}
+{{cityArray.City}}
+
+{{#each cityArray}}
+<li>
+  {{this.flag}}
+  <button> {{this.city}}</button>
+
+</li>
+
+{{/each}}
