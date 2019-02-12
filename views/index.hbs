@@ -9,21 +9,24 @@
 
 <section class="book-tour" id="book">
   <form action="/process-resa" method="POST">
+
     <label>
       When ?
+      <input type="date" name="departureDate" value"{{resaItem.departureDate}} "/>
     </label>
-    <input type="date" name="departureDate" />
+
 
     <label>
       Duration ?:
+      <input type=" text" name="duration" value"{{resaItem.duration}} "/>
+
     </label>
-    <input type="text" name="duration" />
 
     <label>
       How many People?
+      <input type=" number" name="quantity" value"{{resaItem.quantity}} "/>
     </label>
-    <input type="number" name="quantity" />
+{{!-- <a href="/process-resa/">Submit </a> --}}
 
-    <button> <a href="/resa-result">Submit</a> </button>
-  </form>
-</section>
+    <button> Book Your Tour  </button> 
+    </form> </section>
