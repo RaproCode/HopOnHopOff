@@ -21,7 +21,7 @@ const userSchema = new Schema(
         zipCode: { type: String, minlength: 5 }
       },
       {
-        country: { type: String, enum: ["France", "England", "Spain"] } // Nedd to add more city
+        country: { type: String, match: /^[A-Z][A-Z]$/ }
       }
     ],
     email: { type: String, required: true, unique: true, match: /^.+@.+\..+$/ },
