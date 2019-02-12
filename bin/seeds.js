@@ -70,7 +70,7 @@ const departureCities = [
 
 DEPARTURE.insertMany(departureCities)
   .then(cityResult => {
-    console.log(`Inserted $(cityResult.length} CITY)`);
+    console.log(`Inserted ${cityResult.length} CITY`);
   })
   .catch(err => {
     console.log("Insert FAILURE!!", err);
