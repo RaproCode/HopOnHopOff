@@ -1,0 +1,24 @@
+<h2>Choose your Itinerary</h2>
+
+
+<ul class="list-container">
+  {{#each lineArray}}
+  <li class="list-content">
+
+    {{this.name}}
+
+    <ul class="onetour">
+      {{#each this.cities}}
+      <li>
+        {{this.itinerary}}
+        {{!-- {{this.hotel}} --}}
+        {{!-- {{this.visit}} --}}
+      </li>
+      {{/each}}
+    </ul>
+
+  </li>
+</ul>
+
+{{/each}}
+</ul>
