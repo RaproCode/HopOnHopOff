@@ -15,7 +15,9 @@
   {{#each cityArray}}
   <li class="list-content">
     {{this.city}}
-    <button><img class=flags src="{{this.flag}}" alt="flag"></button>
+    <a href="/resa/{{../resaItem._id}}/city/{{this.city}}">
+      <img class=flags src="{{this.flag}}" alt="flag">
+    </a>
 
     {{this.time}}
 
