@@ -89,7 +89,7 @@ app.use((req, res, next) => {
 });
 
 // default value for title local
-app.locals.title = "Express -HopOnHopOff";
+app.locals.title = "Hop On Hop Off";
 
 const index = require("./routes/index");
 app.use("/", index);

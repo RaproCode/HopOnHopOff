@@ -5,10 +5,10 @@ const Schema = mongoose.Schema;
 const citySchema = new Schema(
   {
     // Document structure & rules defined here
-    city: { type: String, required: true },
-    flag: { type: String, required: true },
-    startTime: { type: String, required: true },
-    geolocation: { type: Number }
+    city: { type: String },
+    flag: { type: String },
+    startTime: { type: String },
+    geolocation: { type: String }
   },
   {
     // Additional settings for the Scema class defined here
