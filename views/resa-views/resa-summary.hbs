@@ -1,0 +1,28 @@
+<h2>Your Europe Holiday Itinerary</h2>
+
+
+<ul class="list-container">
+  {{#each lineArray}}
+  <li class="list-content">
+
+    {{this.name}}
+
+    <ul class="onetour">
+      {{#each this.cities}}
+      {{this.itinerary}}
+      {{this.hotel}}
+      {{this.image}}
+      {{this.visit}}
+      {{/each}}
+
+    </ul>
+
+  </li>
+</ul>
+
+{{/each}}
+</ul>
+
+<button>Awesome!Let's GO</button>
+
+</form>
