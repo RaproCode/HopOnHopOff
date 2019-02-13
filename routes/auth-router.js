@@ -64,7 +64,7 @@ router.post("/process-signup", (req, res, next) => {
   // if (originalPassword != passwordConfirmation) {
   //   req.flash(
   //     "Error",
-  //     "The password and Confirmation password fiels must match",
+  //     "The password and Confirmation password fields must match",
   //     "Please enter the same information in both field"
   //   );
 
@@ -78,7 +78,14 @@ router.post("/process-signup", (req, res, next) => {
   User.create({ lastName, firstName, email, encryptedPassword })
     .then(() => {
       req.flash("Congratulation your account is create!!");
-
+      // if (req.user) {
+      //   // AUTHORIZATION: only show the form if you are logged-in
+      //   res.render("room-views/room-form.hbs");
+      // } else {
+      //   // redirect to the login page if you ARE NOT logged-in
+      //   req.flash("error", "You have to be logged-in to add a room. 🛌");
+      //   res.redirect("/login");
+      // }
       // redirect to the HOME PAGE
       res.redirect("/");
     })
