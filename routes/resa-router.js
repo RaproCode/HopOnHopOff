@@ -20,8 +20,15 @@ router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
   // req.user comes from Passport's deserializeUser()
   // (it's the document from the database of the logged-in user)
   if (req.user) {
+    const { resaId, cityName } = req.params;
+
     // AUTHORIZATION: only show the itinerary if you are logged-in
-    res.render("resa-views/resa-option.hbs");
+    Busline.find({ "cities.startingCity": cityName }).then(lines => {
+      console.log(lines, "wahahahha");
+      res.locals.lineArray = lines;
+      res.render("resa-views/resa-option.hbs");
+    });
+    // res.render("resa-views/resa-option.hbs");
   } else {
     // redirect to the sign up page if you ARE NOT logged-in
     req.flash("error", "You have to be signUp to create itinerary");
@@ -29,29 +36,23 @@ router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
   }
 
   // user choices of itinerary
-  router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
-    const { resaId, cityName } = req.params;
+  // router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
+  //   const { resaId, cityName } = req.params;
 
-    Busline.find({ "cities.startingCity": cityName })
-      .then(lines => {
-        console.log(lines, "wahawahwaah");
-        res.locals.lineArray = lines;
-        res.render("resa-views/resa-option.hbs");
-        // res.json(lines);
-      })
-      .catch(err => next(err));
-  });
+  //   Busline.find({ "cities.startingCity": cityName })
+  //     .then(lines => {
+  //       console.log(lines, "wahawahwaah");
+  //       res.locals.lineArray = lines;
+  //       res.render("resa-views/resa-option.hbs");
+  //       // res.json(lines);
+  //     })
+  //     .catch(err => next(err));
+  // });
 });
 
 // Summary of user order
-// router.get("/resa/:resaId/:summary", (req, res, next) => {
-//   const { resaId, summary } = req.params;
-
-//   Busline.find({ "cities.startingCity": summary })
-//   .then( => {
-
-//   })
+// router.get("/resa/{{../resaItem._id}}/city/{{this.city}}", (req, res, next) => {})
+//   .then()
 //   .catch(err => next(err));
-// };
 
 module.exports = router;
