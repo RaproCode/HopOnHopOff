@@ -1,4 +1,4 @@
-<h2>Sign Up</h2>
+<h2 class="signup">Sign Up</h2>
 
 {{>flash_messages}}
 
@@ -7,34 +7,34 @@
 <hr>
 
 {{!-- flash_messages --}}
+<div class="sign-container">
+  <form action="/process-signup" method="POST" class="form-content">
+    <label>
+      Last Name
+      <input type="text" name="lastName" placeholder="" minlength="2" required>
+    </label>
 
-<form action="/process-signup" method="POST">
-  <label>
-    Last Name
-  </label>
-  <input type="text" name="lastName" placeholder="" minlength="2" required>
 
-  <label>
-    First Name
-  </label>
-  <input type="text" name="firstName" minlength="2" required>
+    <label>
+      First Name
+      <input type="text" name="firstName" minlength="2" required>
+    </label>
 
-  <label>
-    E-mail address
-  </label>
-  <input type="email" name="email" placeholder="blahblah@exemple.com" required>
 
-  <label>
-    Password
-  </label>
-  <input type="password" name="originalPassword" required>
+    <label>
+      E-mail address
+      <input type="email" name="email" placeholder="blahblah@exemple.com" required>
 
-  <label>
-    Confirm password
-    <input type="password" name="passwordConfirmation">
-  </label>
+    </label>
 
-  <hr>
+    <label>
+      Password
+      <input type="password" name="originalPassword" required>
+    </label>
 
-  <button>CREATE MY ACCOUNT</button>
+    <button class="btn-form bold">CREATE MY ACCOUNT</button>
+</div>
+<hr>
+
+
 </form>

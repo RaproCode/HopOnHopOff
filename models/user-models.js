@@ -25,7 +25,7 @@ const userSchema = new Schema(
       }
     ],
     email: { type: String, required: true, unique: true, match: /^.+@.+\..+$/ },
-    phoneNumber: { type: Number, unique: true, min: 10 },
+    phoneNumber: { type: Number, min: 10 }, // unique : true
     encryptedPassword: { type: String, required: true, minlength: 6 },
     passwordConfirmation: { type: String },
     booking: { type: String },
