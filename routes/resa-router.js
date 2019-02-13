@@ -19,9 +19,9 @@ router.get("/resa/:resaId", (req, res, next) => {
 router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
   // req.user comes from Passport's deserializeUser()
   // (it's the document from the database of the logged-in user)
-  if (req.user) {
-    const { resaId, cityName } = req.params;
+  const { resaId, cityName } = req.params;
 
+  if (req.user) {
     // AUTHORIZATION: only show the itinerary if you are logged-in
     Busline.find({ "cities.startingCity": cityName }).then(lines => {
       console.log(lines, "wahahahha");
@@ -30,9 +30,11 @@ router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
     });
     // res.render("resa-views/resa-option.hbs");
   } else {
+    req.session.reservationId = resaId;
+    req.session.city = cityName;
     // redirect to the sign up page if you ARE NOT logged-in
     req.flash("error", "You have to be signUp to create itinerary");
-    res.redirect("/signup/");
+    res.redirect("/signup");
   }
 
   // user choices of itinerary

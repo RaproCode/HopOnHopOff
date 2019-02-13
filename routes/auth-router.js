@@ -44,7 +44,7 @@ router.post("/process-signup", (req, res, next) => {
 
   User.create({ lastName, firstName, email, encryptedPassword })
     .then(() => {
-      req.flash("Congratulation your account is create!!");
+      req.flash("success,Congratulation your account is create!!");
       // if (req.user) {
       //   // AUTHORIZATION: only show the form if you are logged-in
       //   res.render("room-views/room-form.hbs");
@@ -57,6 +57,14 @@ router.post("/process-signup", (req, res, next) => {
       res.redirect("/");
     })
     .catch(err => next(err));
+});
+
+router.get("/resa/signup", (req, res, next) => {
+  res.render("auth-views/signup-form.hbs");
+});
+
+router.get("/resa/login", (req, res, next) => {
+  res.render("auth-views/log-in-form.hbs");
 });
 
 router.get("/login", (req, res, next) => {
@@ -85,8 +93,13 @@ router.post("/process-logIn", (req, res, next) => {
       }
 
       req.logIn(userDoc, () => {
-        req.flash("Success", "Welcome back!");
-        res.redirect("/");
+        const { reservationId, city } = req.session;
+        if (city) {
+          res.redirect(`/resa/${reservationId}/city/${city}`);
+        } else {
+          req.flash("Success", "Welcome back!");
+          res.redirect("/");
+        }
       });
     })
     .catch(err => next(err));
@@ -114,7 +127,6 @@ router.get("/resa/:resaId", (req, res, next) => {
 
       City.find()
         .then(cityResults => {
-          console.log(cityResults, "ggygygygygygyggygyggygy");
           res.locals.cityArray = cityResults;
           res.render("resa-views/resa-result.hbs");
         })
