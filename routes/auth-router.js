@@ -123,6 +123,14 @@ router.get("/resa/:resaId", (req, res, next) => {
     .catch(err => next(err));
 });
 
+router.get("/logout", (req, res, next) => {
+  //req.logOut() is a Pssport method that removes the USER ID from the session
+  req.logOut();
+
+  req.flash("Success", "Logged out successfuly!!");
+  res.redirect("/");
+});
+
 // router.get("/resa-result", (req, res, next) => {
 //   // Resa.find().then().catch()
 //   res.render("resa-views/resa-result.hbs");

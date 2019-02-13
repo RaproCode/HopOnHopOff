@@ -15,7 +15,7 @@ router.get("/resa/:resaId", (req, res, next) => {
     .catch(err => next(err));
 });
 
-// user need to sign up before continue to option itinerary
+// // user need to sign up before continue to option itinerary
 router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
   // req.user comes from Passport's deserializeUser()
   // (it's the document from the database of the logged-in user)
@@ -25,7 +25,7 @@ router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
   } else {
     // redirect to the sign up page if you ARE NOT logged-in
     req.flash("error", "You have to be signUp to create itinerary");
-    res.redirect("/signup");
+    res.redirect("/signup/");
   }
 
   // user choices of itinerary
