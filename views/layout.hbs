@@ -9,12 +9,33 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 </head>
 
 <body>
-
-  <header class="header-homePage">
+  <div class="nav-container">
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" href="/signup"> <i class="fa fa-user-circle" aria-hidden="true"></i>Create an
+          Account</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">My account</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link a-red" href="/">Book Your Tour Now !</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Go Back Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Log Out</a>
+      </li>
+    </ul>
+  </div>
+  {{!-- <header class="header-homePage">
     <nav class="header">
       <div class="left-header">
         <img src="" alt="LOGO PICTURE">
@@ -36,7 +57,7 @@
         <a href="/" class="a-home">Go back Home</a>
         {{/if}}
       </div>
-    </nav>
+    </nav> --}}
 
 
   </header>

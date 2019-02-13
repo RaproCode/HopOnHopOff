@@ -10,25 +10,32 @@
 
 <section class="book-tour" id="book">
   <form action="/process-resa" method="POST" class="byt-form bold">
+    <div class="byt-container">
+      <div class="byt-content">
 
-    <label>
-      When ?
-      <input class="byt-input" type="date" name="departureDate" value"{{resaItem.departureDate}} "/>
-    </label>
+        When ?
+        <input class="byt-input" type="date" name="departureDate" value"{{resaItem.departureDate}} "/>
+  
+    </div>
+<div class=" byt-content">
+        Duration ?
+        <input class=" byt-input" type=" text" name="duration" value"{{resaItem.duration}} "/>
 
+ </div>
+ <div class=" byt-content">
+        How many People?
 
-    <label>
-      Duration ?
-      <input class=" byt-input" type=" text" name="duration" value"{{resaItem.duration}} "/>
-
-    </label>
-
-    <label>
-      How many People?
-      <input class=" byt-input" type=" number" name="quantity" value"{{resaItem.quantity}} "/>
-    </label>
+        <input class=" byt-input" type=" number" name="quantity" value"{{resaItem.quantity}} "/>
+  </div>
+ 
 {{!-- <a href="/process-resa/">Submit </a> --}}
-
-    <button class=" byt-btn bold"> Book Your Tour </button>
+ </div>
+    <button class=" byt-btn bold">
+        Book Your Tour <i class="fa fa-hand-o-right" aria-hidden="true"></i></button>
   </form>
+
 </section>
+
+<footer>
+
+</footer>
