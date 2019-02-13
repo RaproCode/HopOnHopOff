@@ -10,11 +10,12 @@
     <ul class="onetour">
       {{#each this.cities}}
       <li>
-        <a href="#">{{this.itinerary}}</a>
-        {{!-- {{this.hotel}} --}}
-        {{!-- {{this.visit}} --}}
+        <form action="/process-resa" method="POST"></form>
+        <input type="checkbox" name="itineraries" value="City">{{this.itinerary}}<br>
+
       </li>
       {{/each}}
+
     </ul>
 
   </li>
@@ -22,3 +23,5 @@
 
 {{/each}}
 </ul>
+<input type="submit" value="Submit">
+</form>
