@@ -27,17 +27,6 @@ router.post("/process-signup", (req, res, next) => {
 
     return;
   }
-  // // Password and Confirmation password
-  // if (originalPassword != passwordConfirmation) {
-  //   req.flash(
-  //     "Error",
-  //     "The password and Confirmation password fields must match",
-  //     "Please enter the same information in both field"
-  //   );
-
-  //   // Must be redirect or can we stay on the page with the flash message ??
-  //   req.redirect("/");
-  // }
 
   // Encrypt the user's password before saving
   const encryptedPassword = bcryptjs.hashSync(originalPassword, 10);

@@ -1,29 +1,26 @@
 <h2>Choose your Itinerary</h2>
 
 
-<ul class="list-container">
-  {{#each lineArray}}
-  <li class="list-content">
+<form action="/process-summary" method="POST">
+  <ul class="list-container">
+    {{#each lineArray}}
+    <li class="list-content">
 
-    {{this.name}}
+      {{this.name}}
 
-    <ul class="onetour">
-      {{#each this.cities}}
+      <ul class="onetour">
+        {{#each this.cities}}
 
-      <li>
-        <form action="/process-summary" method="POST"></form>
-        <input type="checkbox" name="itineraries" value="City">{{this.itinerary}}<br>
+        <li>
+          <input type="checkbox" name="itineraries" value="{{this._id}}">{{this.itinerary}}<br>
 
-      </li>
-      {{/each}}
+        </li>
+        {{/each}}
 
-    </ul>
+      </ul>
 
-  </li>
-</ul>
-
-{{/each}}
-</ul>
-<button>Submit</button>
-{{!-- <input type="submit" value="Submit"> --}}
+    </li>
+    {{/each}}
+  </ul>
+  <button>Submit</button>
 </form>

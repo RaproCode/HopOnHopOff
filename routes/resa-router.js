@@ -53,8 +53,23 @@ router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
 });
 
 // Summary of user order
-// router.get("/resa/{{../resaItem._id}}/city/{{this.city}}", (req, res, next) => {})
-//   .then()
-//   .catch(err => next(err));
+router.get("/summary", (req, res, next) => {
+  res.render("resa-views/resa-summary.hbs");
+});
 
+router.post("/process-summary", (req, res, next) => {
+  const { itineraries } = req.body;
+  Busline.find({ "cities._id": { $in: itineraries } })
+    .then(lines => {
+      lines.forEach(oneLine => {
+        oneLine.cities = oneLine.cities.filter(oneCity => {
+          // convert ID to string because its not really string
+          return itineraries.includes(oneCity._id.toString());
+        });
+      });
+      res.json(lines);
+    })
+    .catch(err => next(err));
+  // res.render("resa-views/resa-summary.hbs");
+});
 module.exports = router;
