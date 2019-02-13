@@ -61,13 +61,15 @@ router.post("/process-summary", (req, res, next) => {
   const { itineraries } = req.body;
   Busline.find({ "cities._id": { $in: itineraries } })
     .then(lines => {
+      res.locals.lineArray = lines;
       lines.forEach(oneLine => {
         oneLine.cities = oneLine.cities.filter(oneCity => {
-          // convert ID to string because its not really string
+          // convert ID to string because its not really s tring
           return itineraries.includes(oneCity._id.toString());
         });
       });
-      res.json(lines);
+      res.render("resa-views/resa-summary.hbs");
+      // res.json(lines);
     })
     .catch(err => next(err));
   // res.render("resa-views/resa-summary.hbs");
