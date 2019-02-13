@@ -27,17 +27,6 @@ router.post("/process-signup", (req, res, next) => {
 
     return;
   }
-  // // Password and Confirmation password
-  // if (originalPassword != passwordConfirmation) {
-  //   req.flash(
-  //     "Error",
-  //     "The password and Confirmation password fields must match",
-  //     "Please enter the same information in both field"
-  //   );
-
-  //   // Must be redirect or can we stay on the page with the flash message ??
-  //   req.redirect("/");
-  // }
 
   // Encrypt the user's password before saving
   const encryptedPassword = bcryptjs.hashSync(originalPassword, 10);
@@ -45,15 +34,7 @@ router.post("/process-signup", (req, res, next) => {
   User.create({ lastName, firstName, email, encryptedPassword })
     .then(() => {
       req.flash("Congratulation your account is create!!");
-      // if (req.user) {
-      //   // AUTHORIZATION: only show the form if you are logged-in
-      //   res.render("room-views/room-form.hbs");
-      // } else {
-      //   // redirect to the login page if you ARE NOT logged-in
-      //   req.flash("error", "You have to be logged-in to add a room. 🛌");
-      //   res.redirect("/login");
-      // }
-      // redirect to the HOME PAGE
+
       res.redirect("/");
     })
     .catch(err => next(err));
