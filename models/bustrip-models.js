@@ -11,6 +11,7 @@ const busSchema = new Schema(
         image: { type: String },
         visit: { type: String },
         itinerary: { type: String },
+        geolocation: { type: String },
         startingCity: { type: String }
       }
     ]
