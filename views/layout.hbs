@@ -15,31 +15,42 @@
 </head>
 
 <body>
-  <div class="nav-container">
-    <ul class="nav justify-content-end">
+  <header>
+    <div class="nav-container myMenu">
 
-      {{#if currentUser}}
-      <b class="nav-link">Wecome Back {{currentUser.lastName}} !</b>
-      <li class="nav-item">
-        <a class="nav-link a-red bold" href="/">Book Your Tour Now !</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/">Go Back Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Log Out</a>
-      </li>
-      {{else}}
-      <li class="nav-item">
-        <a class="nav-link active" href="/signup"> <i class="fa fa-user-circle" aria-hidden="true"></i>Create an
-          Account</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">My account</a>
-      </li>
-      {{/if}}
-    </ul>
-  </div>
+      <img src="/images/logoProjet.png" alt="logo" class="nav-logo" />
+
+      <ul class="nav justify-content-end">
+
+        {{#if currentUser}}
+        <b class="nav-link">Welcome Back {{currentUser.lastName}} !</b>
+        <li class="nav-item">
+          <a class="nav-link a-red bold" href="/">Book Your Tour Now !</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Go Back Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Log Out</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link active" href="/signup"> <i class="fa fa-user-circle" aria-hidden="true"></i>Create an
+            Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">My account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link a-red bold" href="/">Book Your Tour Now !</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Go Back Home</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </header>
   {{!-- <header class="header-homePage">
     <nav class="header">
       <div class="left-header">
@@ -66,6 +77,8 @@
 
 
   </header>
+
+
   {{{body}}}
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

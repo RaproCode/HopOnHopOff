@@ -22,6 +22,26 @@ const userSchema = new Schema(
     phoneNumber: { type: Number, min: 10 }, // unique : true
     encryptedPassword: { type: String, required: true, minlength: 6 },
     passwordConfirmation: { type: String },
+    booking: [
+      {
+        duration: { type: String }
+      },
+      {
+        quantity: { type: String }
+      },
+      {
+        departure: { type: String }
+      },
+      {
+        itinerary: { type: String }
+      },
+      {
+        price: { type: Number }
+      },
+      {
+        ispayed: { type: String }
+      }
+    ],
     role: {
       type: String,
       required: true,

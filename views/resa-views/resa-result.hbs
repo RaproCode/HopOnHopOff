@@ -1,31 +1,31 @@
-<h2>Resa result page</h2>
-
-
-<div class="result-container">
-  <p>You choose to begin your trip on {{resaItem.departureDate}}</p>
+{{!-- <div class="result-container">
+  <h2 class="h2-result">You choose to begin your trip on {{resaItem.departureDate}}</h2>
   <p>For{{resaItem.duration}} day's</p>
   <p>And for{{resaItem.quantity}} people</p>
   <p>But from where do you want to start?! </p>
-</div>
+</div> --}}
 
-<h2>Click to choose your City Start</h2>
+<div class="startCity">
 
-{{cityArray.City}}
+  <h2 class="h2-result">Choose your start city</h2>
 
-<div class="list-result-container">
-  {{#each cityArray}}
-  <ul>
-    <li class="list-result-content">
-      {{this.city}}
-      <a href="/resa/{{../resaItem._id}}/city/{{this.city}}">
-        <img class=flags src="{{this.flag}}" alt="flag">
-      </a>
+  <div class="list-result-container container">
+    <ul class="row">
+      {{#each cityArray}}
+      <li class="col-3">
+        <div class="list-result-content">
+          <h4>{{this.city}}</h4>
+          <a href="/resa/{{../resaItem._id}}/city/{{this.city}}">
+            <img class=flags src="{{this.flag}}" alt="flag">
+          </a>
 
-      departure at {{this.time}}
+          <p>departure at {{this.time}}</p>
 
+        </div>
+      </li>
 
-    </li>
-  </ul>
+      {{/each}}
+    </ul>
+  </div>
 
-  {{/each}}
 </div>
