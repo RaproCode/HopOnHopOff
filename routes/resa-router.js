@@ -36,20 +36,6 @@ router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
     req.flash("error", "You have to be signUp to create itinerary");
     res.redirect("/signup");
   }
-
-  // user choices of itinerary
-  // router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
-  //   const { resaId, cityName } = req.params;
-
-  //   Busline.find({ "cities.startingCity": cityName })
-  //     .then(lines => {
-  //       console.log(lines, "wahawahwaah");
-  //       res.locals.lineArray = lines;
-  //       res.render("resa-views/resa-option.hbs");
-  //       // res.json(lines);
-  //     })
-  //     .catch(err => next(err));
-  // });
 });
 
 // Summary of user order
@@ -75,3 +61,7 @@ router.post("/process-summary", (req, res, next) => {
   // res.render("resa-views/resa-summary.hbs");
 });
 module.exports = router;
+
+router.get("/resa-views/registration-form.hbs", (req, res, next) => {
+  res.render("resa-views/registration-form.hbs");
+});

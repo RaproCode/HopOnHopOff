@@ -1,0 +1,30 @@
+<h2>Your selection</h2>
+
+<p>
+  your selection :
+
+</p>
+
+<div class="container regi-container">
+  <form action="/process-registration" method="POST" style="    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    width: 70%;">
+    <label for="adress" class="col-sm-2 col-form-label" value="{{adress}}">Adress</label>
+    <div class="form-group row">
+
+      <div class="col-sm-10" style="
+      width: 570px">
+        <input type="text" name="streetName" class="form-control input-regi" placeholder="Street Name" required />
+        <input type="number" name="streetNumber" class="form-control input-regi" placeholder="Number" required />
+        <input type="text" name="zipCode" class="form-control input-regi" placeholder="ZipCode" required />
+        <input type="number" name="phoneNumber" class="form-control input-regi" placeholder="Phone Number" required>
+      </div>
+    </div>
+
+
+    <div id="btn-login">
+      <button type="submit" class="btn-login btn-form bold"> Confirmation</button>
+    </div>
+</div>

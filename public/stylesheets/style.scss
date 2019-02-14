@@ -10,22 +10,6 @@ li {
   font-weight: bold;
 }
 
-.header-homePage {
-  height: 70px;
-  background-color: rgb(230, 230, 87);
-}
-.header,
-.left-header {
-  display: flex;
-  justify-content: space-between;
-}
-.right-header {
-  display: flex;
-  align-items: center;
-  width: 35%;
-  justify-content: space-evenly;
-}
-
 .discover-europe {
   height: 500px;
   // background-color: royalblue;
@@ -107,13 +91,14 @@ input {
 }
 .form-login {
   background-color: rgba(128, 128, 128, 0.2);
+  padding-left: 1%;
 }
 #login-container {
   width: 50%;
+  margin-top: 2%;
 }
 
 .btn-form {
-  position: relative;
   border-radius: 5px;
   padding: 5px;
 }
@@ -131,6 +116,10 @@ input {
 .btn-login {
   width: 80px;
   border-radius: 4px;
+}
+#btn-login {
+  display: flex;
+  justify-content: center;
 }
 .byt-input {
   color: red;
@@ -178,4 +167,8 @@ input {
 
 .a-red {
   color: red;
+}
+
+.input-regi {
+  width: 400px;
 }
