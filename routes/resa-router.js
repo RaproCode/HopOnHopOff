@@ -37,7 +37,7 @@ router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
     req.session.reservationId = resaId;
     req.session.city = cityName;
     // redirect to the sign up page if you ARE NOT logged-in
-    req.flash("error", "You have to be signUp to create itinerary");
+    req.flash("error", "Signup to create your itinerary");
     res.redirect("/signup");
   }
 });
@@ -64,26 +64,15 @@ router.post("/process-summary", (req, res, next) => {
       var tripLength = lines[0].cities.length;
       var tripCost = tripLength * 99;
 
-      Resa.findByIdAndUpdate(
-        //resa id,
-        {
-          $set: {
-            itinerary: itineraries,
-            price: tripCost,
-            startingCity: lines.startingCity
-          }
-        },
-        { runValidators: true }
-      )
-        .then(() => {
-          res.locals.cost = tripCost;
-          res.locals.lineArray = lines;
-          res.render("resa-views/resa-summary.hbs");
-        })
-        .catch(err => next(err));
+      res.locals.cost = tripCost;
+      res.locals.lineArray = lines;
+      res.render("resa-views/resa-summary.hbs");
+      // res.json(lines);
     })
     .catch(err => next(err));
+  // res.render("resa-views/resa-summary.hbs");
 });
+
 module.exports = router;
 
 router.get("/resa-views/registration-form.hbs", (req, res, next) => {

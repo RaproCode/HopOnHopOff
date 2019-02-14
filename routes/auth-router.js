@@ -31,19 +31,16 @@ router.post("/process-signup", (req, res, next) => {
   // Encrypt the user's password before saving
   const encryptedPassword = bcryptjs.hashSync(originalPassword, 10);
 
-  User.create({ lastName, firstName, email, encryptedPassword }).then(() => {
-    req.flash("success,Congratulation your account is create!!");
-    // if (req.user) {
-    //   // AUTHORIZATION: only show the form if you are logged-in
-    //   res.render("room-views/room-form.hbs");
-    // } else {
-    //   // redirect to the login page if you ARE NOT logged-in
-    //   req.flash("error", "You have to be logged-in to add a room. 🛌");
-    //   res.redirect("/login");
-    // }
-    // redirect to the HOME PAGE
-    res.redirect("/");
-  });
+  User.create({ lastName, firstName, email, encryptedPassword }).then(
+    userDoc => {
+      req
+        .logIn(userDoc, () => {
+          req.flash("success,Congratulation your account is create!!");
+          res.redirect("/");
+        })
+        .catch(err => next(err));
+    }
+  );
 });
 
 router.get("/resa/signup", (req, res, next) => {
@@ -99,15 +96,16 @@ router.get("/resa", (req, res, next) => {
 router.post("/process-resa", (req, res, next) => {
   const { departureDate, duration, quantity } = req.body;
   let userId;
-  if (req.user) {
-    userId = req.user._id;
+  if (!req.user) {
+    req.flash("error", "Signup to create your itinerary");
+    res.redirect("/signup");
+  } else {
+    Resa.create({ departureDate, duration, quantity, userId })
+      .then(resaDoc => {
+        res.redirect(`/resa/${resaDoc._id}`);
+      })
+      .catch(err => next(err));
   }
-
-  Resa.create({ departureDate, duration, quantity, userId })
-    .then(resaDoc => {
-      res.redirect(`/resa/${resaDoc._id}`);
-    })
-    .catch(err => next(err));
 });
 
 router.get("/resa/:resaId", (req, res, next) => {
