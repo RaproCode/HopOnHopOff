@@ -10,8 +10,7 @@ const resaSchema = new Schema({
   departureDate: { type: String },
   duration: { type: Number },
   quantity: { type: Number },
-  departureCity: { type: String },
-  cost: { type: String }
+  departureCity: { type: String }
 });
 
 const Resa = mongoose.model("Resa", resaSchema);
