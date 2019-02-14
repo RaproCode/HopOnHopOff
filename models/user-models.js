@@ -12,15 +12,9 @@ const userSchema = new Schema(
     age: { type: Number, min: 18 },
     adress: [
       {
-        streetName: { type: String, required: true, minlength: 2 } // Nedd to add match
-      },
-      {
-        streetNumber: { type: Number, required: true, min: 1, max: 4 }
-      },
-      {
-        zipCode: { type: String, minlength: 5 }
-      },
-      {
+        streetName: { type: String, required: true, minlength: 2 }, // Nedd to add match
+        streetNumber: { type: Number, required: true, min: 1, max: 4 },
+        zipCode: { type: String, minlength: 5 },
         country: { type: String, match: /^[A-Z][A-Z]$/ }
       }
     ],
@@ -28,26 +22,6 @@ const userSchema = new Schema(
     phoneNumber: { type: Number, min: 10 }, // unique : true
     encryptedPassword: { type: String, required: true, minlength: 6 },
     passwordConfirmation: { type: String },
-    booking: [
-      {
-        duration: { type: String }
-      },
-      {
-        quantity: { type: String }
-      },
-      {
-        departure: { type: String }
-      },
-      {
-        itinerary: { type: String }
-      },
-      {
-        Price: { type: Number }
-      },
-      {
-        Ispayed: { type: String }
-      }
-    ],
     role: {
       type: String,
       required: true,

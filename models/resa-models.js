@@ -10,7 +10,20 @@ const resaSchema = new Schema({
   departureDate: { type: String },
   duration: { type: Number },
   quantity: { type: Number },
-  departureCity: { type: String }
+  departureCity: { type: String },
+  itinerary: [
+    {
+      hotel: { type: String },
+      image: { type: String },
+      visit: { type: String },
+      itinerary: { type: String },
+      geolocation: { type: String },
+      startingCity: { type: String },
+      cost: { type: Number }
+    }
+  ],
+  price: { type: Number },
+  isPayed: { type: String, default: false }
 });
 
 const Resa = mongoose.model("Resa", resaSchema);

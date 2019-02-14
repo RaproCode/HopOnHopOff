@@ -3,6 +3,8 @@ const express = require("express");
 const City = require("../models/city-models");
 const Busline = require("../models/bustrip-models");
 
+const Resa = require("../models/resa-models");
+
 const router = express.Router();
 
 // result of user input -- Departure city
@@ -23,12 +25,14 @@ router.get("/resa/:resaId/city/:cityName", (req, res, next) => {
 
   if (req.user) {
     // AUTHORIZATION: only show the itinerary if you are logged-in
-    Busline.find({ "cities.startingCity": cityName }).then(lines => {
-      console.log(lines, "wahahahha");
-      res.locals.lineArray = lines;
-      res.render("resa-views/resa-option.hbs");
-    });
-    // res.render("resa-views/resa-option.hbs");
+    Busline.find({ "cities.startingCity": cityName })
+      .then(lines => {
+        console.log(lines, "wahahahha");
+
+        res.locals.lineArray = lines;
+        res.render("resa-views/resa-option.hbs");
+      })
+      .catch(err => next(err));
   } else {
     req.session.reservationId = resaId;
     req.session.city = cityName;
@@ -60,13 +64,25 @@ router.post("/process-summary", (req, res, next) => {
       var tripLength = lines[0].cities.length;
       var tripCost = tripLength * 99;
 
-      res.locals.cost = tripCost;
-      res.locals.lineArray = lines;
-      res.render("resa-views/resa-summary.hbs");
-      // res.json(lines);
+      Resa.findByIdAndUpdate(
+        //resa id,
+        {
+          $set: {
+            itinerary: itineraries,
+            price: tripCost,
+            startingCity: lines.startingCity
+          }
+        },
+        { runValidators: true }
+      )
+        .then(() => {
+          res.locals.cost = tripCost;
+          res.locals.lineArray = lines;
+          res.render("resa-views/resa-summary.hbs");
+        })
+        .catch(err => next(err));
     })
     .catch(err => next(err));
-  // res.render("resa-views/resa-summary.hbs");
 });
 module.exports = router;
 
