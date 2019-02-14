@@ -4,7 +4,7 @@
   <img src="/images/map.svg" alt="image" class="myIcon" />
   <h2 class="h2-result">Choose your Itinerary</h2>
 
-  <form action="/process-summary" method="POST">
+  <form action="/process-summary" method="POST" class="d-flex flex-column align-items-center">
     <div class="list-container container">
 
       {{#each lineArray}}
@@ -26,7 +26,7 @@
       </div>
       {{/each}}
     </div>
-    <button class="MyBtn-option">Submit</button>
+    <button class="MyBtn-option btn-login">Submit</button>
   </form>
 
 </div>

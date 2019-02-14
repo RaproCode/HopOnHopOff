@@ -73,13 +73,9 @@ input {
 .login,
 .signup {
   text-align: center;
-  font-size: 24px; }
-
-.sign-container {
-  display: flex;
-  height: 500px;
-  justify-content: center;
-  align-items: center; }
+  font-size: 24px;
+  font-family: "PoetsenOne-Regular.ttf";
+  margin: 30px auto; }
 
 .form-content {
   display: flex;
@@ -98,11 +94,14 @@ input {
 
 .form-login {
   background-color: rgba(128, 128, 128, 0.2);
-  padding-left: 1%; }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  border-radius: 50px; }
 
 #login-container {
-  width: 50%;
-  margin-top: 2%; }
+  width: 50%; }
 
 .btn-form {
   border-radius: 5px;
@@ -118,12 +117,11 @@ input {
   width: 50%; }
 
 .btn-login {
-  width: 80px;
-  border-radius: 4px; }
-
-#btn-login {
-  display: flex;
-  justify-content: center; }
+  border-radius: 4px;
+  width: 200px;
+  border-radius: 50px; }
+  .btn-login a {
+    color: #000; }
 
 .byt-input {
   color: red;
@@ -246,5 +244,84 @@ input {
 .MyBtn-option {
   font-size: 20px;
   font-family: "PoetsenOne-Regular.ttf"; }
+
+.mySign-container {
+  font-family: "PoetsenOne-Regular.ttf";
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center; }
+
+.mySign-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+label {
+  display: flex; }
+
+.mysign-content {
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+  .mysign-content label {
+    font-weight: 700;
+    display: flex;
+    flex-direction: column; }
+
+.signupPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85vh; }
+
+.flash {
+  margin: 30px 0; }
+
+.btnSignup {
+  margin-top: 30px; }
+
+.loginInput {
+  max-width: 90%;
+  flex: 100%; }
+
+.itinerary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 10%; }
+
+.btn-margin {
+  margin: 30px 0; }
+
+.price {
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: "PoetsenOne-Regular.ttf"; }
+
+.itImage {
+  height: 400px; }
+
+.oneLine {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.marg-top {
+  margin: 0; }
+
+.line {
+  margin: 15px 0;
+  font-size: 23px;
+  font-family: "PoetsenOne-Regular.ttf"; }
+
+.top-m {
+  margin-top: 30px;
+  margin-bottom: 0 !important; }
+
+.marg10 {
+  margin: 10px 0; }
 
 /*# sourceMappingURL=style.css.map */
