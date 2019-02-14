@@ -4,35 +4,40 @@
 {{body}}
 
 <section class="discover-europe">
-  <h2>DISCOVER EUROPE</h2>
 
-</section>
+  <div class="mainBlock">
 
-<section class="book-tour" id="book">
-  <form action="/process-resa" method="POST" class="byt-form bold">
-    <div class="byt-container">
-      <div class="byt-content">
+    <h2>DISCOVER EUROPE</h2>
 
-        When ?
-        <input class="byt-input" type="date" name="departureDate" value"{{resaItem.departureDate}} "/>
+    <div class="book-tour" id="book">
+      <form action="/process-resa" method="POST" class="byt-form bold myForm">
+        <div class="byt-container">
+          <div class="byt-content myByt">
+
+            When ?
+            <input class="byt-input" type="date" name="departureDate" value"{{resaItem.departureDate}} "/>
   
     </div>
-<div class=" byt-content">
-        Duration ?
-        <input class=" byt-input" type=" text" name="duration" value"{{resaItem.duration}} "/>
+<div class=" byt-content myByt">
+            Duration ?
+            <input class=" byt-input" type=" text" name="duration" value"{{resaItem.duration}} "/>
 
  </div>
- <div class=" byt-content">
-        How many People?
+ <div class=" byt-content myByt">
+            People ?
 
-        <input class=" byt-input" type=" number" name="quantity" value"{{resaItem.quantity}} "/>
+            <input class=" byt-input" type=" number" name="quantity" value"{{resaItem.quantity}} "/>
   </div>
  
 {{!-- <a href="/process-resa/">Submit </a> --}}
  </div>
-    <button class=" byt-btn bold">
-        Book Your Tour <i class="fa fa-hand-o-right" aria-hidden="true"></i></button>
-  </form>
+    <button class=" byt-btn myBtn">
+            Book Your Tour <i class="fa fa-hand-o-right" aria-hidden="true"></i></button>
+      </form>
+
+    </div>
+
+  </div>
 
 </section>
 

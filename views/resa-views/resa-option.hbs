@@ -1,27 +1,32 @@
-<h2>Choose your Itinerary</h2>
+<div class="startCity">
 
 
+  <img src="/images/map.svg" alt="image" class="myIcon" />
+  <h2 class="h2-result">Choose your Itinerary</h2>
 
-<form action="/process-summary" method="POST">
-  <ul class="list-container">
-    {{#each lineArray}}
-    <li class="list-content">
+  <form action="/process-summary" method="POST">
+    <div class="list-container container">
 
-      {{this.name}}
+      {{#each lineArray}}
+      <div class="list-content row myRow">
 
-      <ul class="onetour">
-        {{#each this.cities}}
+        <h4 class="h2-result">{{this.name}}</h4>
 
-        <li>
-          <input type="checkbox" name="itineraries" value="{{this._id}}">{{this.itinerary}}<br>
+        <ul class="onetour">
+          {{#each this.cities}}
 
-        </li>
-        {{/each}}
+          <li>
+            <input type="checkbox" name="itineraries" value="{{this._id}}">{{this.itinerary}}<br>
 
-      </ul>
+          </li>
+          {{/each}}
 
-    </li>
-    {{/each}}
-  </ul>
-  <button>Submit</button>
-</form>
+        </ul>
+
+      </div>
+      {{/each}}
+    </div>
+    <button>Submit</button>
+  </form>
+
+</div>

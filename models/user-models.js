@@ -42,10 +42,10 @@ const userSchema = new Schema(
         itinerary: { type: String }
       },
       {
-        Price: { type: Number }
+        price: { type: Number }
       },
       {
-        Ispayed: { type: String }
+        ispayed: { type: String }
       }
     ],
     role: {
