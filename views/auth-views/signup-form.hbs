@@ -1,38 +1,60 @@
-<h3>Create HoHo Account</h3>
+<section class="signupPage">
 
-{{>flash_messages}}
+  <img src="/images/icon6.png" alt="icon" class="myIcon" />
+  <h3 class="signup">Create your account</h3>
+  {{>flash_messages}}
 
-<hr>
-
-
-<div class="sign-container">
-  <form action="/process-signup" method="POST" class="form-content">
-    <label>
-      Last Name
-      <input type="text" name="lastName" placeholder="" minlength="2" required>
-    </label>
+  {{!--
+  <hr> --}}
 
 
-    <label>
-      First Name
-      <input type="text" name="firstName" minlength="2" required>
-    </label>
+  {{!-- <div class=" mySign-container"> --}}
+    <form action="/process-signup" method="POST" class="mySign-form">
+      <div class="mySign-container container d-flex align-items-center">
+
+        <div class="contentSignup row">
+
+          <div class="mysign-content col-lg-3 col-md-6 col-sm-12">
+            <label>
+              Last Name </label>
+            <input type="text" name="lastName" placeholder="" minlength="2" required>
+
+          </div>
+
+          <div class="mysign-content col-lg-3 col-md-6 col-sm-12">
+            <label>
+              First Name </label>
+
+            <input type="text" name="firstName" minlength="2" required>
+
+          </div>
+
+          <div class="mysign-content col-lg-3 col-md-6 col-sm-12">
+            <label>
+              E-mail
+            </label>
+            <input type="email" name="email" placeholder="blahblah@exemple.com" required>
+
+          </div>
+
+          <div class="mysign-content col-lg-3 col-md-6 col-sm-12">
+            <label>
+              Password
+            </label>
+            <input type="password" name="originalPassword" required>
+
+          </div>
+
+        </div>
+
+        <div class="btnSignup">
+          <button class="btn-form bold btn-login">CREATE MY ACCOUNT</button>
+        </div>
+
+      </div>
+      <hr>
 
 
-    <label>
-      E-mail address
-      <input type="email" name="email" placeholder="blahblah@exemple.com" required>
+    </form>
 
-    </label>
-
-    <label>
-      Password
-      <input type="password" name="originalPassword" required>
-    </label>
-
-    <button class="btn-form bold">CREATE MY ACCOUNT</button>
-</div>
-<hr>
-
-
-</form>
+</section>

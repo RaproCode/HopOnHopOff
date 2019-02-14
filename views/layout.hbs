@@ -18,7 +18,9 @@
   <header>
     <div class="nav-container myMenu">
 
-      <img src="/images/logoProjet.png" alt="logo" class="nav-logo" />
+      <a class="nav-link" href="/">
+        <img src="/images/logoProjet.png" alt="logo" class="nav-logo" />
+      </a>
 
       <ul class="nav justify-content-end">
 
@@ -26,9 +28,6 @@
         <b class="nav-link">Welcome Back {{currentUser.lastName}} !</b>
         <li class="nav-item">
           <a class="nav-link a-red bold" href="/">Book Your Tour Now !</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">Go Back Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/logout">Log Out</a>
@@ -43,9 +42,6 @@
         </li>
         <li class="nav-item">
           <a class="nav-link a-red bold" href="/">Book Your Tour Now !</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">Go Back Home</a>
         </li>
         {{/if}}
       </ul>

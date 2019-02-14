@@ -1,34 +1,38 @@
-<h2>Your Europe Holiday Itinerary</h2>
+<section class="itinerary">
 
+  <h2 class="h2-result btn-margin">Your Europe Holiday Itinerary</h2>
 
-<ul class="list-container">
-  {{#each lineArray}}
-  <li class="list-content">
+  <div class="oneLine">
 
-    {{this.name}}
+    {{#each lineArray}}
 
-    <ul class="onetour">
+    <div class="marg-top">
       {{#each this.cities}}
-      <br>
-      {{this.itinerary}}
-      <br>
-      <img src="{{this.image}}" alt="">
-      <br>
-      {{this.hotel}}
-      <br>
+      <div class="line">
+        {{this.itinerary}}
+      </div>
+
+      <img src="{{this.image}}" alt="image" class="itImage" />
+
+      <div class="marg10">
+        <b>
+          {{this.hotel}}
+        </b>
+      </div>
       {{this.visit}}
       {{/each}}
 
-    </ul>
+    </div>
+    {{/each}}
 
-  </li>
-</ul>
+  </div>
+
+  <h5 class="price">Total Price: {{cost}} € / person</h5>
 
 
-{{/each}}
-Total Price: {{cost}} Euro / person
-</ul>
+  </ul>
+  <button class="MyBtn-option btn-login btn-margin"> <a href="/resa-views/registration-form.hbs">Go</a> </button>
 
-<button> <a href="/resa-views/registration-form.hbs">Awesome!Let's GO</a> </button>
+  </form>
 
-</form>
+</section>

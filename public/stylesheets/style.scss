@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 50px 17px 50px 50px;
   font: 14px Helvetica, "Lucida Grande", Arial, sans-serif;
 }
 
@@ -86,14 +86,10 @@ input {
 .signup {
   text-align: center;
   font-size: 24px;
+  font-family: "PoetsenOne-Regular.ttf";
+  margin: 30px auto;
 }
 
-.sign-container {
-  display: flex;
-  height: 500px;
-  justify-content: center;
-  align-items: center;
-}
 .form-content {
   display: flex;
   flex-direction: column;
@@ -112,11 +108,14 @@ input {
 }
 .form-login {
   background-color: rgba(128, 128, 128, 0.2);
-  padding-left: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  border-radius: 50px;
 }
 #login-container {
   width: 50%;
-  margin-top: 2%;
 }
 
 .btn-form {
@@ -135,13 +134,14 @@ input {
 }
 
 .btn-login {
-  width: 80px;
   border-radius: 4px;
+  width: 200px;
+  border-radius: 50px;
+  a {
+    color: #000;
+  }
 }
-#btn-login {
-  display: flex;
-  justify-content: center;
-}
+
 .byt-input {
   color: red;
   border: 2px solid rgba(173, 171, 171, 0.5);
@@ -174,8 +174,10 @@ input {
   margin-left: 3%;
 }
 .nav-container {
-  background-color: rgb(245, 245, 105);
   height: 60px;
+  @media (max-width: 1064px) {
+    height: auto;
+  }
 }
 .nav-link {
   color: black;
@@ -283,4 +285,102 @@ input {
 .MyBtn-option {
   font-size: 20px;
   font-family: "PoetsenOne-Regular.ttf";
+}
+
+.mySign-container {
+  font-family: "PoetsenOne-Regular.ttf";
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+}
+.mySign-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+label {
+  display: flex;
+}
+
+.mysign-content {
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  label {
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.signupPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+.flash {
+  margin: 30px 0;
+}
+
+.btnSignup {
+  margin-top: 30px;
+}
+
+.loginInput {
+  max-width: 90%;
+  flex: 100%;
+}
+
+.itinerary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 10%;
+}
+
+.btn-margin {
+  margin: 30px 0;
+}
+
+.price {
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: "PoetsenOne-Regular.ttf";
+}
+
+.itImage {
+  height: 400px;
+}
+
+.oneLine {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marg-top {
+  margin: 0;
+}
+
+.line {
+  margin: 15px 0;
+  font-size: 23px;
+  font-family: "PoetsenOne-Regular.ttf";
+}
+
+.top-m {
+  margin-top: 30px;
+  margin-bottom: 0 !important;
+}
+
+.marg10 {
+  margin: 10px 0;
 }
