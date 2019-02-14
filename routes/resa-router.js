@@ -61,13 +61,21 @@ router.post("/process-summary", (req, res, next) => {
   const { itineraries } = req.body;
   Busline.find({ "cities._id": { $in: itineraries } })
     .then(lines => {
-      res.locals.lineArray = lines;
+      // res.json(lines);
+
       lines.forEach(oneLine => {
         oneLine.cities = oneLine.cities.filter(oneCity => {
-          // convert ID to string because its not really s tring
+          // convert ID to string because its not really string
           return itineraries.includes(oneCity._id.toString());
         });
       });
+
+      // Creating calculation Total Price of the trip
+      var tripLength = lines[0].cities.length;
+      var tripCost = tripLength * 99;
+
+      res.locals.cost = tripCost;
+      res.locals.lineArray = lines;
       res.render("resa-views/resa-summary.hbs");
       // res.json(lines);
     })

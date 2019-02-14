@@ -12,7 +12,8 @@ const busSchema = new Schema(
         visit: { type: String },
         itinerary: { type: String },
         geolocation: { type: String },
-        startingCity: { type: String }
+        startingCity: { type: String },
+        cost: { type: Number }
       }
     ]
   },
