@@ -232,6 +232,8 @@ input {
 
 .onetour {
   padding-inline-start: 0; }
+  .onetour li {
+    font-family: "PoetsenOne-Regular.ttf"; }
 
 .myIcon {
   height: 130px;
@@ -240,5 +242,9 @@ input {
 .myRow {
   flex-direction: column;
   align-items: center; }
+
+.MyBtn-option {
+  font-size: 20px;
+  font-family: "PoetsenOne-Regular.ttf"; }
 
 /*# sourceMappingURL=style.css.map */
