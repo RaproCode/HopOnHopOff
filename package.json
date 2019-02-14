@@ -1,10 +1,10 @@
 {
-  "name": "hoponhop",
+  "name": "hopon-hopoff",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "DEBUG=hoponhop:* nodemon ./bin/www",
+    "dev": "DEBUG=hopon-hopoff:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www"
   },
   "dependencies": {
