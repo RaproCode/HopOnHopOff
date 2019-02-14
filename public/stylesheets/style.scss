@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 50px 17px 50px 50px;
   font: 14px Helvetica, "Lucida Grande", Arial, sans-serif;
 }
 
@@ -174,8 +174,10 @@ input {
   margin-left: 3%;
 }
 .nav-container {
-  background-color: rgb(245, 245, 105);
   height: 60px;
+  @media (max-width: 1064px) {
+    height: auto;
+  }
 }
 .nav-link {
   color: black;
