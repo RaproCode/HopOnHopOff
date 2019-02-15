@@ -7,6 +7,8 @@ const Resa = require("../models/resa-models");
 
 const router = express.Router();
 
+const { sendConfirmationMail } = require("../config/nodemailer-setup.js");
+
 // result of user input -- Departure city
 router.get("/resa/:resaId", (req, res, next) => {
   City.find()
@@ -73,8 +75,12 @@ router.post("/process-summary", (req, res, next) => {
   // res.render("resa-views/resa-summary.hbs");
 });
 
-module.exports = router;
-
-router.get("/resa-views/registration-form.hbs", (req, res, next) => {
+router.get("/registration", (req, res, next) => {
   res.render("resa-views/registration-form.hbs");
 });
+router.post("process-registration", (req, res, next) => {
+  // const { }
+  res.redirect("resa-views/final-page.hbs");
+});
+
+module.exports = router;
