@@ -22,30 +22,28 @@
         <input type="number" name="phoneNumber" class="form-control input-regi" placeholder="Phone Number" required>
       </div>
     </div>
+</div>
 
-    <form action="/process-registration" method="POST" style="    display: flex;
+<div class="container regi-container">
+  <form action="/process-registration" method="POST" style="    display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: lightgrey;
     width: 70%;">
-      <label for="payment" class="col-sm-2 col-form-label" value="{{payment}}">Payment</label>
-      <div class="form-group row">
+    <label for="payment" class="col-sm-2 col-form-label" value="{{payment}}">Payment</label>
+    <div class="form-group row">
 
-        <div class="col-sm-10" style="
+      <div class="col-sm-10" style="
       width: 570px">
-          <input type="text" name="creditCardName" class="form-control input-regi" placeholder="Credit Card Owner"
-            required />
-          <input type="number" name="creditCardNumber" class="form-control input-regi" placeholder="Card Number"
-            required />
-          <input type="number" name="expiryDate" class="form-control input-regi" placeholder="Expiry Date" required />
-          <input type="number" name="cvv" class="form-control input-regi" placeholder="CVV Code" required />
-        </div>
+        <input type="text" name="creditCardName" class="form-control input-regi" placeholder="Credit Card Owner"
+          required />
+        <input type="number" name="creditCardNumber" class="form-control input-regi" placeholder="Card Number" required />
+        <input type="number" name="expiryDate" class="form-control input-regi" placeholder="Expiry Date" required />
+        <input type="number" name="cvv" class="form-control input-regi" placeholder="CVV Code" required />
       </div>
+    </div>
+</div>
 
-
-
-
-      <div id="btn-login">
-        <button type="submit" class="btn-login btn-form bold"> Confirmation</button>
-      </div>
+<div id="btn-login">
+  <button type="submit" class="btn-login btn-form bold"> Confirmation</button>
 </div>
