@@ -384,3 +384,12 @@ label {
 .marg10 {
   margin: 10px 0;
 }
+
+.card {
+  display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 500px;
+}

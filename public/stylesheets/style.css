@@ -326,4 +326,10 @@ label {
 .marg10 {
   margin: 10px 0; }
 
+.card {
+  display: flex;
+  justify-content: center;
+  height: 250px;
+  width: 500px; }
+
 /*# sourceMappingURL=style.css.map */
