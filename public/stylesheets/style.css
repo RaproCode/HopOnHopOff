@@ -264,7 +264,7 @@ label {
 
 .mysign-content {
   font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
   .mysign-content label {
     font-weight: 700;
     display: flex;
@@ -328,7 +328,8 @@ label {
 
 .card {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   height: 250px;
   width: 500px; }
 
