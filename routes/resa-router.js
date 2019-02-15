@@ -84,7 +84,6 @@ router.get("/registration", (req, res, next) => {
   res.render("resa-views/registration-form.hbs");
 });
 router.post("/process-registration", (req, res, next) => {
-  // const { }
   res.render("resa-views/final-page.hbs");
 });
 
