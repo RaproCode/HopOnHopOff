@@ -80,6 +80,7 @@ router.get("/registration", (req, res, next) => {
   res.render("resa-views/final-page.hbs");
 });
 router.post("/process-registration", (req, res, next) => {
+  req.flash("Welcome aboard !!! Lovely to have you on our bus");
   // const { }
   res.render("resa-views/final-page.hbs");
 });
