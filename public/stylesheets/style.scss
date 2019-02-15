@@ -437,3 +437,22 @@ label {
     margin: 0 auto;
   }
 }
+
+.visit {
+  font: bold 20%;
+}
+.final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin: 45px 0;
+    font-family: "PoetsenOne-Regular.ttf";
+  }
+  img {
+    margin: 10px 0;
+  }
+  p {
+    font-size: 18px;
+  }
+}
