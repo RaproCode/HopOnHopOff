@@ -7,6 +7,8 @@ const Resa = require("../models/resa-models");
 
 const router = express.Router();
 
+const { sendConfirmationMail } = require("../config/nodemailer-setup.js");
+
 // result of user input -- Departure city
 router.get("/resa/:resaId", (req, res, next) => {
   City.find()
