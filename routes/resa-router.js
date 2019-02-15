@@ -74,6 +74,10 @@ router.post("/process-summary", (req, res, next) => {
     .catch(err => next(err));
 });
 
+// router.get("/process-summary", (req, res, next) => {
+//   res.render("resa-views/registration-form.hbs");
+// });
+
 // submit registration and payment form (last form)
 
 router.get("/registration", (req, res, next) => {
