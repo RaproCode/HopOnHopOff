@@ -74,17 +74,16 @@ router.post("/process-summary", (req, res, next) => {
     .catch(err => next(err));
 });
 
-// router.get("/process-summary", (req, res, next) => {
-//   res.render("resa-views/registration-form.hbs");
-// });
+router.get("/resa-views/registration-form.hbs", (req, res, next) => {
+  res.render("resa-views/registration-form.hbs");
+});
 
 // submit registration and payment form (last form)
 
 router.get("/registration", (req, res, next) => {
-  res.render("resa-views/final-page.hbs");
+  res.render("resa-views/registration-form.hbs");
 });
 router.post("/process-registration", (req, res, next) => {
-  req.flash("Welcome aboard !!! Lovely to have you on our bus");
   // const { }
   res.render("resa-views/final-page.hbs");
 });
