@@ -1,31 +1,53 @@
-<h2>Your selection</h2>
+<section class="itinerary">
 
-<p>
-  your selection :
+  <h2 class="h2-result btn-margin">Final Confirmation</h2>
 
-</p>
-
-<div class="container regi-container">
-  <form action="/process-registration" method="POST" style="    display: flex;
+  <div class="container regi-container">
+    <form action="/process-registration" method="POST" style="    display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
+    background-color: lightgrey;
     width: 70%;">
-    <label for="adress" class="col-sm-2 col-form-label" value="{{adress}}">Adress</label>
-    <div class="form-group row">
+      <label for="adress" class="col-sm-2 col-form-label" value="{{adress}}">Address</label>
+      <div class="form-group row">
 
-      <div class="col-sm-10" style="
+        <div class="col-sm-12" style="
       width: 570px">
-        <input type="text" name="streetName" class="form-control input-regi" placeholder="Street Name" required />
-        <input type="number" name="streetNumber" class="form-control input-regi" placeholder="Number" required />
-        <input type="text" name="zipCode" class="form-control input-regi" placeholder="ZipCode" required />
-        <input type="number" name="phoneNumber" class="form-control input-regi" placeholder="Phone Number" required>
+          <input type="text" name="streetName" class="form-control input-regi" placeholder="Street Name" required />
+          <input type="number" name="streetNumber" class="form-control input-regi" placeholder="Number" required />
+          <input type="text" name="zipCode" class="form-control input-regi" placeholder="ZipCode" required />
+          <input type="number" name="phoneNumber" class="form-control input-regi" placeholder="Phone Number" required>
+        </div>
       </div>
-    </div>
+  </div>
+
+  <div class="container regi-container">
+    <form action="/process-registration" method="POST" style="    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lightgrey;
+    width: 70%;">
+      <label for="payment" class="col-sm-2 col-form-label" value="{{payment}}">Payment</label>
+      <img class="card" src="/images/Card.jpg" />
+
+      <div class="form-group row">
+        <div class="col-sm-12" style="
+      width: 570px">
+          <input type="text" name="creditCardName" class="form-control input-regi" placeholder="Credit Card Owner"
+            required />
+          <input type="number" name="creditCardNumber" class="form-control input-regi" placeholder="Card Number"
+            required />
+          <input type="number" name="expiryDate" class="form-control input-regi" placeholder="Expiry Date" required />
+          <input type="number" name="cvv" class="form-control input-regi" placeholder="CVV Code" required />
+        </div>
+      </div>
+  </div>
+
+  <div id="btn-login">
+    <button type="submit" class="btn-login btn-form bold"> Confirmation</button>
+  </div>
 
 
-    <div id="btn-login">
-      <button type="submit" class="btn-login btn-form bold"> Confirmation</button>
-    </div>
-</div>
-</form>
+  </div>
+  </form>
+</section>
