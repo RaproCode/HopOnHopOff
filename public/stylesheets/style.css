@@ -333,4 +333,11 @@ label {
   height: 250px;
   width: 500px; }
 
+.regis-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lightgrey;
+  width: 70%; }
+
 /*# sourceMappingURL=style.css.map */
