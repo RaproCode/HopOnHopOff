@@ -264,7 +264,7 @@ label {
 
 .mysign-content {
   font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
   .mysign-content label {
     font-weight: 700;
     display: flex;
@@ -333,11 +333,40 @@ label {
   height: 250px;
   width: 500px; }
 
-.regis-form {
+#adress-form {
+  flex-direction: column;
+  align-items: center; }
+  #adress-form label {
+    font-family: "PoetsenOne-Regular.ttf";
+    font-size: 22px; }
+  #adress-form input {
+    margin-left: 20px;
+    width: 300px; }
+
+.regi-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: lightgrey;
-  width: 70%; }
+  flex-direction: column;
+  align-items: center; }
+  .regi-container label {
+    font-family: "PoetsenOne-Regular.ttf";
+    font-size: 22px; }
+
+#regi-add-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  #regi-add-container label {
+    font-family: "PoetsenOne-Regular.ttf";
+    font-size: 22px; }
+  #regi-add-container input {
+    margin-left: 20px;
+    width: 300px; }
+
+.cbImage {
+  margin-top: 30px;
+  height: 205px;
+  width: auto; }
+  .cbImage img {
+    margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */

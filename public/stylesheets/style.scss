@@ -393,10 +393,47 @@ label {
   width: 500px;
 }
 
-.regis-form {
-  display: flex;
+#adress-form {
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background-color: lightgrey;
-  width: 70%;
+  label {
+    font-family: "PoetsenOne-Regular.ttf";
+    font-size: 22px;
+  }
+  input {
+    margin-left: 20px;
+    width: 300px;
+  }
+}
+
+.regi-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  label {
+    font-family: "PoetsenOne-Regular.ttf";
+    font-size: 22px;
+  }
+}
+#regi-add-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  label {
+    font-family: "PoetsenOne-Regular.ttf";
+    font-size: 22px;
+  }
+  input {
+    margin-left: 20px;
+    width: 300px;
+  }
+}
+
+.cbImage {
+  margin-top: 30px;
+  height: 205px;
+  width: auto;
+  img {
+    margin: 0 auto;
+  }
 }
