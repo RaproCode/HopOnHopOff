@@ -10,11 +10,6 @@ li {
   font-weight: bold;
 }
 
-.discover-europe {
-  height: 500px;
-  // background-color: royalblue;
-}
-
 .book-tour {
   display: flex;
   justify-content: center;
@@ -45,11 +40,17 @@ input {
 }
 
 .flags {
-  width: 100px;
-  height: 60px;
+  width: 6.25rem;
+  height: 3.75rem;
   object-fit: cover;
+  @media (max-width: 991.98px) {
+    width: 4.25rem;
+    height: auto;
+  }
 }
-
+.list-row {
+  justify-content: center;
+}
 .list-result-content {
   background-color: rgb(252, 252, 252);
   display: flex;
@@ -161,14 +162,37 @@ input {
   font-size: 1.5rem;
   line-height: 1.875rem;
   margin-top: 3%;
+  @media (max-width: 756px) {
+    width: 10.9rem;
+    margin-top: 4%;
+    // background-color: blue;
+    display: flex;
+    align-items: center;
+  }
 }
 .byt-container {
   display: flex;
+  @media (max-width: 756px) {
+    display: flex;
+    flex-direction: column;
+    // background-color: orange;
+    input {
+      // background-color: blue;
+      width: 210px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
 }
 .byt-content {
   display: flex;
   flex-direction: column;
   width: 33%;
+  @media (max-width: 756px) {
+    width: 100%;
+    align-items: center;
+    // background-color: orange;
+  }
 }
 .fa-hand-o-right {
   margin-left: 3%;
@@ -191,7 +215,7 @@ input {
   width: 400px;
 }
 .nav-logo {
-  width: 130px;
+  width: 8.125rem;
   height: auto;
 }
 
@@ -207,6 +231,20 @@ input {
     letter-spacing: 3px;
     font-size: 12px;
     font-family: Helvetica;
+  }
+  @media (max-width: 575.98px) {
+    // background-color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.myMenu-ul {
+  @media (max-width: 575.98px) {
+    // background-color: orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
@@ -227,7 +265,7 @@ input {
 }
 
 .myBtn {
-  font-size: 20px;
+  font-size: 1.3rem;
   font-family: "PoetsenOne-Regular.ttf";
 }
 
@@ -250,6 +288,10 @@ input {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  height: 85vh;
+  @media (max-width: 575.98px) {
+    height: 156vh;
+  }
 }
 
 @font-face {
@@ -259,10 +301,6 @@ input {
 .h2-result {
   font-family: "PoetsenOne-Regular.ttf";
   margin-bottom: 20px;
-}
-
-.startCity {
-  height: 85vh;
 }
 
 .onetour {

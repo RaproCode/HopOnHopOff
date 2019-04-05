@@ -8,9 +8,6 @@ li {
 .bold {
   font-weight: bold; }
 
-.discover-europe {
-  height: 500px; }
-
 .book-tour {
   display: flex;
   justify-content: center;
@@ -38,9 +35,16 @@ input {
   display: flex; }
 
 .flags {
-  width: 100px;
-  height: 60px;
+  width: 6.25rem;
+  height: 3.75rem;
   object-fit: cover; }
+  @media (max-width: 991.98px) {
+    .flags {
+      width: 4.25rem;
+      height: auto; } }
+
+.list-row {
+  justify-content: center; }
 
 .list-result-content {
   background-color: #fcfcfc;
@@ -140,14 +144,32 @@ input {
   font-size: 1.5rem;
   line-height: 1.875rem;
   margin-top: 3%; }
+  @media (max-width: 756px) {
+    .byt-btn {
+      width: 10.9rem;
+      margin-top: 4%;
+      display: flex;
+      align-items: center; } }
 
 .byt-container {
   display: flex; }
+  @media (max-width: 756px) {
+    .byt-container {
+      display: flex;
+      flex-direction: column; }
+      .byt-container input {
+        width: 210px;
+        margin-top: 10px;
+        margin-bottom: 20px; } }
 
 .byt-content {
   display: flex;
   flex-direction: column;
   width: 33%; }
+  @media (max-width: 756px) {
+    .byt-content {
+      width: 100%;
+      align-items: center; } }
 
 .fa-hand-o-right {
   margin-left: 3%; }
@@ -168,7 +190,7 @@ input {
   width: 400px; }
 
 .nav-logo {
-  width: 130px;
+  width: 8.125rem;
   height: auto; }
 
 .myMenu {
@@ -183,6 +205,17 @@ input {
     letter-spacing: 3px;
     font-size: 12px;
     font-family: Helvetica; }
+  @media (max-width: 575.98px) {
+    .myMenu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; } }
+
+@media (max-width: 575.98px) {
+  .myMenu-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; } }
 
 .myForm {
   display: flex;
@@ -198,7 +231,7 @@ input {
     border: 2px solid white; }
 
 .myBtn {
-  font-size: 20px;
+  font-size: 1.3rem;
   font-family: "PoetsenOne-Regular.ttf"; }
 
 .mainBlock {
@@ -217,7 +250,11 @@ input {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  height: 85vh; }
+  @media (max-width: 575.98px) {
+    .startCity {
+      height: 156vh; } }
 
 @font-face {
   font-family: "PoetsenOne-Regular.ttf";
@@ -226,9 +263,6 @@ input {
 .h2-result {
   font-family: "PoetsenOne-Regular.ttf";
   margin-bottom: 20px; }
-
-.startCity {
-  height: 85vh; }
 
 .onetour {
   padding-inline-start: 0; }
