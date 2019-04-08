@@ -81,6 +81,22 @@ input {
   font-family: "PoetsenOne-Regular.ttf";
   margin: 30px auto; }
 
+@media (max-width: 578px) {
+  .form-registration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; } }
+
+@media (max-width: 578px) {
+  .registration-content {
+    width: 100%; } }
+
+@media (max-width: 578px) {
+  .cbImage img {
+    width: 100%; } }
+
 .form-content {
   display: flex;
   flex-direction: column;
